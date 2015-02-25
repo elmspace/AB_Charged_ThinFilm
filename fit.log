@@ -1189,3 +1189,61 @@ correlation matrix of the fit parameters:
                c      n      
 c               1.000 
 n              -0.998  1.000 
+
+
+*******************************************************************************
+Wed Feb 25 13:49:13 2015
+
+
+FIT:    data read from path_to_file using (abs($2)):4
+        format = x:z
+	y range restricted to [3.50000 : 4.00000]
+        #datapoints = 6
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.82901           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.74697
+
+initial set of free parameter values
+
+b               = 1e-30
+m               = 1e-30
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 1.13923e-07
+rel. change during last iteration : -2.86717e-13
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.000168763
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.84808e-08
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+b               = 0.913724         +/- 0.001514     (0.1657%)
+m               = -0.0306366       +/- 0.0004034    (1.317%)
+
+
+correlation matrix of the fit parameters:
+
+               b      m      
+b               1.000 
+m              -0.999  1.000 
+
+
+*******************************************************************************
+Wed Feb 25 13:49:13 2015
+
+
+FIT:    data read from path_to_file using (abs($2)):4
+        format = x:z
+	y range restricted to [7.00000 : 8.50000]
+BREAK:          No data to fit 
+
