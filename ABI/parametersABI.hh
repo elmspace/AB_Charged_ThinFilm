@@ -4,7 +4,7 @@ void parametersAB(double *chi, double f, double &ds, double *Ns,double *dxy, dou
   double tt; // This is for convergence of BP solver
 
   // Set to 1 to minimize box size and 0 to not
-  box_min=1;
+  box_min=0;
 
   // 0=read 1=set manually 2=random
   Iomega=0;

@@ -189,16 +189,25 @@ double FreeEnergy(double ***w, double ***phi, double **psi, double **eta, double
 
 
   //+++++++++++++++++++++++++++++ This output is setup for the matlab plotting +++++++++++++++++++
+  double dx=dxy[0];
+  double dy=dxy[1];
+  double dz=dxy[0];
   std::ofstream outputFile7("./MATLAB/xyz.dat");
-  for (i=0;i<Nx;i++){
-    outputFile7<<i*dxy[0]<<" "<<i*dxy[1]<<" "<<i*dxy[0]<<std::endl;
+  for (i=0;i<(Nx+2);i++){
+    outputFile7<<i*dx<<" "<<i*dy<<" "<<i*dz<<std::endl;
   }
   outputFile7.close();  
   std::ofstream outputFile8("./MATLAB/ABI.dat");
-  for (i=0;i<Nx;i++){
-    for(j=0;j<Ny;j++){
-      for(k=0;k<Nx;k++){//format A, B, I
-	outputFile8<<phi[0][i][j]<<" "<<phi[1][i][j]<<" "<<phi[2][i][j]<<std::endl;
+  for (i=-1;i<=Nx;i++){
+    for(j=-1;j<=Ny;j++){
+      for(k=-1;k<=Nx;k++){//format A, B, I
+	if((i==-1)||(i==Nx)){
+	  outputFile8<<0.0<<" "<<0.0<<" "<<0.0<<" "<<10.0<<std::endl;
+	}else if((j==-1)||(k==-1)||(j==Ny)||(k==Nx)){
+	  outputFile8<<0.0<<" "<<0.0<<" "<<0.0<<" "<<0.0<<std::endl;
+	}else {
+	  outputFile8<<phi[0][i][j]<<" "<<phi[1][i][j]<<" "<<phi[2][i][j]<<" "<<0.0<<std::endl;
+	}
       }
     }
   }

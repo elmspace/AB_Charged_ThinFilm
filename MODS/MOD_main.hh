@@ -4,10 +4,10 @@ void MOD_main(double ***w, double ***phi, double **psi, double **eta, double **d
   int i,j;
 
   // Setting the structure 1=on 0=off
-  PER=0;                         // perpendicular
+  PER=1;                         // perpendicular
   PAR_AS=0;                     // Parallel configuration, with A attracted to the substrate
   PAR_BS=0;                     // Parallel configuration, with B attrcated to the substrate
-  MIX=1;                        // mixed
+  MIX=0;                        // mixed
   
   parametersAB(chi,f,ds,Ns,dxy,chiMatrix,x_sub);
 
@@ -15,14 +15,14 @@ void MOD_main(double ***w, double ***phi, double **psi, double **eta, double **d
   Iomega=1;
 
   // Charge percentage 1e-10 is 0
-  PA=0.00000000001;
+  PA=0.001;
   pIave=PA*pAave;
   
   // Potential difference *************************
   psi_bc_1=25.0;
   psi_bc_2=0.0; // Will be kept at zero all the time
   
-  mu=-7.0; // set to - for B_Sub and set to + for A_Sub
+  mu=-4.5; // set to - for B_Sub and set to + for A_Sub
   //||||||||||||||||||||||||||||||||||||||||||||||
   // This is where we define the h(r) only nonzero at surfaces
   for(i=0;i<Nx;i++){
