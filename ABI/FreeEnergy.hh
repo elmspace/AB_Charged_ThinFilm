@@ -2,7 +2,7 @@ double FreeEnergy(double ***w, double ***phi, double **psi, double **eta, double
 
   
   double  currentfE, oldfE, deltafE;  
-  int     i,j,iter,chain,ii,jj; 
+  int     i,j,k,iter,chain,ii,jj; 
   double  precision=1.0e-3; 
   double  QAB,QI; 
   double  fEW, fEchi, fES, fE_charge, fESurf, fE_homogenous; 
@@ -181,6 +181,35 @@ double FreeEnergy(double ***w, double ***phi, double **psi, double **eta, double
   destroy_3d_double_array(delW);
   destroy_3d_double_array(newW);
   // ------------------------------------------------
+
+
+
+
+
+
+
+  //+++++++++++++++++++++++++++++ This output is setup for the matlab plotting +++++++++++++++++++
+  std::ofstream outputFile7("./MATLAB/xyz.dat");
+  for (i=0;i<Nx;i++){
+    outputFile7<<i*dxy[0]<<" "<<i*dxy[1]<<" "<<i*dxy[0]<<std::endl;
+  }
+  outputFile7.close();  
+  std::ofstream outputFile8("./MATLAB/ABI.dat");
+  for (i=0;i<Nx;i++){
+    for(j=0;j<Ny;j++){
+      for(k=0;k<Nx;k++){//format A, B, I
+	outputFile8<<phi[0][i][j]<<" "<<phi[1][i][j]<<" "<<phi[2][i][j]<<std::endl;
+      }
+    }
+  }
+  outputFile8.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
 
 
   return oldfE;
