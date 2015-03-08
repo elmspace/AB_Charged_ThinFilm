@@ -23,9 +23,9 @@ void MOD_main_Vcritical_vs_mu(double ***w, double ***phi, double **psi, double *
   parametersAB(chi,f,ds,Ns,dxy,chiMatrix,x_sub);
 
   // Overwriting the chosen parameters:
-  psi_bc_1=19.0;
+  psi_bc_1=0.0;
   psi_bc_2=0.0; // This is always set to 0.0
-  mu=-4.8; //- for B + for A near substrate
+  mu=0.1; //- for B + for A near substrate
   //||||||||||||||||||||||||||||||||||||||||||||||
   // This is where we define the h(r) only nonzero at surfaces
   for(i=0;i<Nx;i++){
@@ -46,12 +46,12 @@ void MOD_main_Vcritical_vs_mu(double ***w, double ***phi, double **psi, double *
   //+++++++++++++++++++++++++++++++++++
 
   // Setting the top limit of mu
-  mu_limit=0.0;
+  mu_limit=7.0;
   //+++++++++++++++++++++++++++++++++++
   
   // Setting the del parameters (step sizes)
-  delV=2.0;
-  delmu=0.1; 
+  delV=1.0;
+  delmu=0.25; 
   //+++++++++++++++++++++++++++++++++++
 
   
@@ -66,14 +66,14 @@ void MOD_main_Vcritical_vs_mu(double ***w, double ***phi, double **psi, double *
 	// Setting the structure 1=on 0=off
 	if(j==0){
 	  PER=0;             // perpendicular
-	  PAR_AS=0;          // parallel A by substrate
-	  PAR_BS=1;          // parallel B by substrate
+	  PAR_AS=1;          // parallel A by substrate
+	  PAR_BS=0;          // parallel B by substrate
 	  MIX=0;             // mixed
 	}else{
-	  PER=0;             // perpendicular
+	  PER=1;             // perpendicular
 	  PAR_AS=0;          // parallel A by substrate
 	  PAR_BS=0;          // parallel B by substrate
-	  MIX=1;             // mixed
+	  MIX=0;             // mixed
 	}
 	
 	omega(w);
@@ -115,7 +115,7 @@ void MOD_main_Vcritical_vs_mu(double ***w, double ***phi, double **psi, double *
     
     // Set the voltage back for new scan
     // It doesnt have to start from 0 again
-    psi_bc_1-=(2.0*delV);
+    psi_bc_1-=(5.0*delV);
     if(psi_bc_1<0.0){psi_bc_1=0.0;} // If the potential is set to less than zero, reset it to zero
 
     std::ofstream outputFile37("./RESULTS/MOD_main_Vcritical_vs_mu.dat" , ios::app);

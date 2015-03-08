@@ -32,8 +32,8 @@ void MOD_main_delfE_vs_delV(double ***w, double ***phi, double **psi, double **e
       // Setting the structure 1=on 0=off
       if(j==0){
 	PER=0;             // perpendicular
-	PAR_AS=1;          // parallel A by substrate
-	PAR_BS=0;          // parallel B by substrate
+	PAR_AS=0;          // parallel A by substrate
+	PAR_BS=1;          // parallel B by substrate
 	MIX=0;             // mixed
       }else{
 	PER=1;             // perpendicular

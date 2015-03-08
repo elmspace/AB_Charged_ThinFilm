@@ -1,9 +1,9 @@
-#reset
-#set key b l
+reset
+set key b l
 
-#plot "/Users/ashkandehghan/Desktop/SCFT_CODES/AB_Charged_ThinFilm/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title " " w lp
+plot "/Users/ashkandehghan/Desktop/SCFT_CODES/AB_Charged_ThinFilm/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title " " w lp
 
-#pause(-1)
+pause(-1)
 
 
 reset
