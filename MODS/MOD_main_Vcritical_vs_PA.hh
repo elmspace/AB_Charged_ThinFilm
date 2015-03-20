@@ -22,7 +22,7 @@ void MOD_main_Vcritical_vs_PA(double ***w, double ***phi, double **psi, double *
   parametersAB(chi,f,ds,Ns,dxy,chiMatrix,x_sub);
 
   // Overwriting the chosen parameters:
-  psi_bc_1=0.0;
+  psi_bc_1=15.0;
   psi_bc_2=0.0; // Will be kept at zero all the time
   PA=0.00000000001;
   // Average concentrations (Because pIave depends on PA)
@@ -49,14 +49,14 @@ void MOD_main_Vcritical_vs_PA(double ***w, double ***phi, double **psi, double *
       for(j=0;j<2;j++){
 	// Setting the structure 1=on 0=off
 	if(j==0){
-	  PER=0;             // perpendicular
-	  PAR_AS=0;          // parallel A by substrate
-	  PAR_BS=1;          // parallel B by substrate
-	  MIX=0;             // mixed
-	}else{
 	  PER=1;             // perpendicular
 	  PAR_AS=0;          // parallel A by substrate
 	  PAR_BS=0;          // parallel B by substrate
+	  MIX=0;             // mixed
+	}else{
+	  PER=0;             // perpendicular
+	  PAR_AS=0;          // parallel A by substrate
+	  PAR_BS=1;          // parallel B by substrate
 	  MIX=0;             // mixed
 	}
 	
@@ -64,7 +64,7 @@ void MOD_main_Vcritical_vs_PA(double ***w, double ***phi, double **psi, double *
 	
 	if((PAR_AS==1)||(PAR_BS==1)){
 	  fE_Par=FreeEnergy(w,phi,psi,eta,diel_cons,Ns,ds,k_vector,chi,dxy,chiMatrix,x_sub);
-	} else if(PER==1){
+	} else if((PER==1)||(MIX==1)){
 	  fE_Per=FreeEnergy(w,phi,psi,eta,diel_cons,Ns,ds,k_vector,chi,dxy,chiMatrix,x_sub);
 	}
 	

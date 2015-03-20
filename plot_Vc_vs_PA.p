@@ -1,15 +1,16 @@
 reset
 set key b l
 
-plot "/Users/ashkandehghan/Desktop/SCFT_CODES/AB_Charged_ThinFilm/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title " " w lp
+plot "/1/home/dehgha2/Desktop/SCFT_CODES/AB_Charged_ThinFilm/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title " " w lp,\
+"/1/home/dehgha2/Desktop/SCFT_CODES/AB_Charged_ThinFilm/RESULTS/MOD_main_Vcritical_vs_PA_mu_7.dat" using 2:1 title " " w lp
 
 pause(-1)
 
 
 reset
 
-set term postscript enhanced color
-set output "~/Desktop/fE.ps"
+#set term postscript enhanced color
+#set output "~/Desktop/fE.ps"
 
 set xlabel 'P_A'  font ",22"
 set ylabel '{/Symbol D}V_c'  font ",22"
