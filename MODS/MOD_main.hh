@@ -15,14 +15,14 @@ void MOD_main(double ***w, double ***phi, double **psi, double **eta, double **d
   Iomega=1;
 
   // Charge percentage 1e-10 is 0
-  PA=0.003;
+  PA=0.001;
   pIave=PA*pAave;
   
   // Potential difference *************************
-  psi_bc_1=25.0;
+  psi_bc_1=5.0;
   psi_bc_2=0.0; // Will be kept at zero all the time
   
-  mu=5.0; // set to - for B_Sub and set to + for A_Sub
+  mu=-1.0; // set to - for B_Sub and set to + for A_Sub
   //||||||||||||||||||||||||||||||||||||||||||||||
   // This is where we define the h(r) only nonzero at surfaces
   for(i=0;i<Nx;i++){

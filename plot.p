@@ -7,7 +7,7 @@ reset
 # Mac
 #path_to_file = "/Users/ashkandehghan/Desktop/SCFT_CODES/AB_Charged_ThinFilm/PHI/phi2D.dat"
 # Landau
-path_to_file = "/1/home/dehgha2/Desktop/SCFT_CODES/AB_Charged_ThinFilm/PHI/phi2D.dat"
+path_to_file = "/1/home/dehgha2/Desktop/SCFT_CODES/AB_Charged_ThinFilm2/PHI/phi2D.dat"
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #set term postscript enhanced color
@@ -35,7 +35,7 @@ set title 'Electrode -'  font ",22"
    set autoscale
    set size square
    
-   splot path_to_file using 2:1:3
+   splot path_to_file using 2:1:4
 
 
 

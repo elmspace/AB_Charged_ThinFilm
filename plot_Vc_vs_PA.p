@@ -1,7 +1,7 @@
 reset
 
-set term postscript enhanced color
-set output "~/Desktop/fE.ps"
+#set term postscript enhanced color
+#set output "~/Desktop/fE.ps"
 
 
 set key b l font ",22"
@@ -11,7 +11,7 @@ set ylabel '{/Symbol D}V_c'  font ",22"
 
 set xr [0.0 : 0.0049]
 
-plot "/1/home/dehgha2/Desktop/SCFT_CODES/mu6/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title "{/Symbol m} = 6 " w lp lw 4 pt 6
+plot "/1/home/dehgha2/Desktop/SCFT_CODES/mu2/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title "{/Symbol m} = 6 " w lp lw 4 pt 6
 
 
 #"/1/home/dehgha2/Desktop/SCFT_CODES/mu3/RESULTS/MOD_main_Vcritical_vs_PA.dat" using 2:1 title " " w lp,\

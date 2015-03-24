@@ -111,7 +111,7 @@ double FreeEnergy(double ***w, double ***phi, double **psi, double **eta, double
 	  delW[3][i][j]=newW[3][i][j]-w[3][i][j];
 	  
 	  fESurf+=(x_sub[0][i][j]*phi[0][i][j]+x_sub[1][i][j]*phi[1][i][j])*dxy[0]*dxy[1];
-	  fEW+=(newW[3][i][j]*phi[3][i][j]*dxy[0]*dxy[1]); // here we add w_e * phi_e where w_e is psi
+	  //fEW+=(newW[3][i][j]*phi[3][i][j]*dxy[0]*dxy[1]); // here we add w_e * phi_e where w_e is psi
 	}
       }
 
